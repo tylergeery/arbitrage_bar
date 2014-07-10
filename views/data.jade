@@ -1,0 +1,27 @@
+extends layout
+
+block header
+
+block content
+  body.white(ng-controller="priceManager")
+    div.navFull(ng-show="nav")
+      div.navImage_white(src="images/navicon.png" ng-click="showNav()") 
+        img(src="images/navicon_white.png")
+        | Menu
+      h1 
+        a(href="/") Customer
+      h1 
+        a(href="/data") Price Analysis
+      h1
+        a(href="/data") Add Info
+    div.head
+      div.navImage(src="images/navicon.png" ng-click="showNav()") 
+        img(src="images/navicon.png")
+        | Menu
+      h1.main_head Liquidity
+      
+    
+
+    
+
+

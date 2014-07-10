@@ -1,0 +1,94 @@
+/* Main Stylesheet for the Alculator */
+/* Built by Tyler Geery and Peter Vrouvas */
+/**************** MVG *********************/
+
+body { background:url('../images/background.jpg') rgba(0,0,0,.5); background-size:cover;  font-size:1.2em; font-family:'Helvetica Neue', 'Optima';}
+.white {background:white; }
+.head {border-bottom: .1em solid black; box-shadow:0 .1em 0.3em; width:100%; text-align:center;}
+.main_head {font-size:2em; margin:0 auto; padding:.2em;}
+.navImage {  position:absolute; top:.4em; left:.4em; vertical-align:top; line-height: 2em;}
+.navImage_white {  position:relative; top:.4em; left:.4em; vertical-align:top; line-height: 2em; padding-bottom:.4em;}
+.navImage img, .navImage_white img {height:2em;}
+.navFull {width:25%; position:fixed; height:100%; z-index:500; color:white; background:rgb(0,0,0);}
+.navFull h1 {font-size:1.6em; width:100%; border-top:1px solid white;}
+.navFull a {text-decoration:none; color:white; display:block; padding:1em .5em; cursor:pointer;}
+
+.slideshow {
+  position: relative;
+  overflow: hidden;
+  height:10em;
+  width:100%;
+  background:rgb(50,50,50);
+}
+.marquee_holder {
+  /*background: url(slideshow.jpg);*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 10em;
+  width: 300%;
+  -webkit-animation: slideshow 10s linear infinite;
+  -moz-animation:    slideshow 10s linear infinite;
+}
+.second {top:5em;}
+
+.beer {float:left; color:white; padding:.5em 2em; color:green;}
+.red {color:red;}
+
+.beer_box {
+	width:100%;
+	overflow:scroll;
+	border-radius:1em 1em 1em 1em;
+}
+.beer_box_inner {
+	float:left;
+	width:50%;
+	text-align:center;
+}
+.inner_inner {
+	margin:1em auto;
+	background:rgba(255,255,255,.8);
+	width:80%;
+	height:100%;
+}
+
+.beer_tab {
+	float:left;
+	margin:1em 0;
+	width:33%;
+
+}
+.beer_tab img {width:6em; height:4em; border-radius:5px 5px; cursor:pointer;}
+
+.summary_sheet {
+	margin:1em 0;
+	width:50%;
+	float:right;
+	min-height:10em;
+}
+
+.reset {background:rgba(0,0,0,8); border-radius:5px 5px; color:white; font-size:1.2em; padding:.2em;}
+.inner_title {text-align: center;}
+.summary_sheet table {width:100%;}
+.halfie {width:50%; text-align:center;}
+.total_cost {margin-top:1em;}
+
+@-webkit-keyframes slideshow {
+  0%    { left: 0; }
+  100%  { left: -120%; }
+}
+@moz-keyframes slideshow {
+  0%    { left: 0; }
+  100%  { left: -120%; }
+}
+
+.data_section {width:100%; overflow:hidden;}
+.data_title {font-size:2em; color:white; text-align:center; padding-top:.5em;}
+.data_panel {width:30%; position:relative;  height:100%; float:left;}
+.panel_item {cursor:pointer; font-size:1.2em; position:relative; color:white; width:80%; right:0; padding:.5em; margin:.5em; background:rgba(0,0,0,.8);}
+
+.graph_area { margin:.5em 0 0 2.5%; width:60%; float:left; background:rgba(0,0,0,.8);}
+.graph_holder {width:80%; background:rgba(255,255,255,1); margin:1em auto; color:black; text-align:center;}
+.actual { margin-top:1.5em; margin:0 auto; width:400px;}
+
+ 

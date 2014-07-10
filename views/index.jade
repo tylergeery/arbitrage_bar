@@ -1,0 +1,89 @@
+extends layout
+
+block header
+
+block content
+  body(ng-controller="priceManager")
+    div.navFull(ng-show="nav")
+      div.navImage_white(src="images/navicon.png" ng-click="showNav()") 
+        img(src="images/navicon_white.png")
+        | Menu
+      h1 
+        a(ng-click="followNav('customer', false)") Customers
+        ul
+          li(ng-repeat="customer in $scope.customers" ng-click="followNav('customer', $index)") Customer + {{$index}}
+
+      h1 
+        a(ng-click="followNav('data', false)") Trend Analysis
+      h1
+        a(ng-click="followNav('add', false)") Add Info
+    
+    div.head
+      div.navImage(src="images/navicon.png" ng-click="showNav()") 
+        img(src="images/navicon.png")
+        | Menu
+      h1.main_head Liquidity
+
+    div.customer(ng-show="customer")    
+      div.slideshow
+        div.marquee_holder
+          div.beer(ng-repeat="beer in beers" ng-class="{red: beer.change < 0}")
+            div.name {{beer.name}}
+            div.change {{beer.change}}
+            div.price {{beer.price | currency}}
+          div.beer(ng-repeat="beer in beers" ng-class="{red: beer.change < 0}")
+            div.name {{beer.name}}
+            div.change {{beer.change}}
+            div.price {{beer.price | currency}}
+        div.marquee_holder.second
+          div.beer(ng-repeat="beer in beers" ng-class="{red: beer.change < 0}")
+            div.name {{beer.name}}
+            div.change {{beer.change}}
+            div.price {{beer.price | currency}}
+          div.beer(ng-repeat="beer in beers" ng-class="{red: beer.change < 0}")
+            div.name {{beer.name}}
+            div.change {{beer.change}}
+            div.price {{beer.price | currency}}
+  
+      div.beer_box
+        div.beer_box_inner
+          div.inner_inner
+            div.beer_tab(ng-repeat="beer in beers")
+              div.beer_img
+                img(ng-src="images/beers/{{beer.picture}}" ng-click="addCost(beer)")
+  
+  
+        div.summary_sheet
+          div.inner_inner
+            div.inner_title Summary Sheet
+            table.cost
+              tr(ng-repeat="cost in costs")
+                td.halfie {{cost.name}}
+                td.halfie {{cost.price | currency}}
+            table.total_cost
+              tr
+                td.halfie Total:
+                td.halfie {{total_cost | currency}}
+              tr
+                td
+                td 
+                  button.reset(ng-click="removeCosts()") Next Customer
+
+    div.data_section(ng-show="data")
+
+      div.data_panel
+
+        div.panel_item(ng-repeat="beer in beers" ng-click="showGraph(beer.code)") {{beer.name}}
+      div.graph_area
+        div.data_title Budweiser
+        div.graph_holder
+          div.actual(google-chart chart="chart" style="{{chart.cssStyle}}")
+        div.graph_holder
+          div.actual(google-chart chart="chart2" style="{{chart2.cssStyle}}")
+
+
+    div.data_panel(ng-show="add_info")
+
+
+
+
